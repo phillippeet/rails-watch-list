@@ -10,3 +10,118 @@
 // Your CSS partials
 @import "components/index";
 @import "pages/index";
+
+
+body{
+  background: #141414;
+  color: #f7f7f7;
+}
+
+.container p{
+  max-width: 600px;
+}
+
+.card-category {
+  background-size: cover;
+  background-position: center;
+  height: 450px;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  border-radius: 8px;
+  position: relative;
+  padding: 30px;
+  border: 1px solid #333;
+  overflow: hidden;
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+
+}
+
+.card-category a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border: 0;
+  text-indent: -9999px;
+  text-align: center;
+  margin: auto;
+  padding: 80% 0;
+}
+.card-category.add-new a {
+  text-indent: 0;
+  padding: 30% 0;
+  text-decoration: none;
+  color: #f7f7f7
+}
+
+.card-category.add-new a::before {
+  content: "+";
+  display: block;
+  font-size: 100px;
+}
+
+
+.banner {
+  background-size: cover;
+  background-position: center;
+  padding: 250px 0;
+}
+
+.banner h1 {
+  font-size: 50px;
+  text-align: center;
+}
+
+.back{
+  position: absolute;
+  height: 60px;
+  width: 60px;
+  left: 60px;
+  top: 60px;
+  text-align: center;
+  line-height: 60px;
+  border-radius: 60px;
+  border: 1px solid #fff;
+  transform: rotate(180deg);
+  font-size: 20px;
+}
+
+.button{
+  padding: 20px 40px;
+  border-radius: 8px;
+  border: 1px solid #333 !important;
+  text-decoration: none;
+  color: white;
+  float: left;
+  margin: 0 10px 0 0;
+}
+.solid-button{
+  background: #333;
+}
+.container:after{
+  clear: both;
+  display: block;
+  content: ""
+}
+
+.form-control{
+  background: none !important;
+  border: 1px solid #333 !important;
+  border-radius: 4px;
+  color: #fff !important;
+  line-height: 50px;
+  font-size: 24px;
+}
+
+textarea{
+  min-height: 200px !important;
+}

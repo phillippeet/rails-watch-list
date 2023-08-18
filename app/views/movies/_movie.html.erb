@@ -1,0 +1,18 @@
+<div id="<%= dom_id movie %>">
+
+  <div class="banner" style="background-image: linear-gradient(180deg, rgba(20,20,20,0.5) 40%, rgb(20, 20, 20) 100%), url(<%= movie.poster_url %>)">
+    <div class="container">
+      <h1><%= movie.title %></h1>
+    </div>
+  </div>
+
+  <div class="container my-5" style="max-width: 800px">
+    <p>
+      <%= movie.overview %>
+    </p>
+    <p>
+      <strong>Rating:</strong> <%= movie.rating %>/10
+    </p>
+  </div>
+
+</div>
