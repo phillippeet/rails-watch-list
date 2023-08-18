@@ -1,14 +1,19 @@
 <p style="color: green"><%= notice %></p>
 
-<h1>Lists</h1>
+<div class="container my-5">
+  <h1 class="my-5">Lists</h1>
 
 <div id="lists">
-  <% @lists.each do |list| %>
-    <%= render list %>
-    <p>
-      <%= link_to "Show this list", list %>
-    </p>
-  <% end %>
+  <div class="card-list">
+    <% @lists.each do |list| %>
+        <div class="card-list-category" style="background-image: linear-gradient(180deg, rgba(20,20,20,.2) 0%, rgba(20,20,20,.2) 100%), url(https://source.unsplash.com/random/?<%= list.name %>,film)">
+          <%= list.name %>
+          <%= link_to "Show this list", list %>
+        </div>
+    <% end %>
+    <div class="card-list-category add-new">
+        <%= link_to "Add a list", new_list_path %>
+      </div>
+  </div>
 </div>
-
-<%= link_to "New list", new_list_path %>
+</div>

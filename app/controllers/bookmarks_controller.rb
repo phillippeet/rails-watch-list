@@ -23,15 +23,15 @@ class BookmarksController < ApplicationController
   def create
     @bookmark = Bookmark.new(bookmark_params)
 
-    # respond_to do |format|
-    #   if @bookmark.save
-    #     format.html { redirect_to bookmark_url(@bookmark), notice: "Bookmark was successfully created." }
-    #     format.json { render :show, status: :created, location: @bookmark }
-    #   else
-    #     format.html { render :new, status: :unprocessable_entity }
-    #     format.json { render json: @bookmark.errors, status: :unprocessable_entity }
-    #   end
-    # end
+    respond_to do |format|
+      if @bookmark.save
+        format.html { redirect_to bookmark_url(@bookmark), notice: "Bookmark was successfully created." }
+        format.json { render :show, status: :created, location: @bookmark }
+      else
+        format.html { render :new, status: :unprocessable_entity }
+        format.json { render json: @bookmark.errors, status: :unprocessable_entity }
+      end
+    end
   end
 
   # PATCH/PUT /bookmarks/1 or /bookmarks/1.json

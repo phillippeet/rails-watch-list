@@ -15,6 +15,7 @@
 body{
   background: #141414;
   color: #f7f7f7;
+
 }
 
 .container p{
@@ -33,6 +34,13 @@ body{
   padding: 30px;
   border: 1px solid #333;
   overflow: hidden;
+  transform: scale(1);
+  transition: 0.3s ease;
+}
+
+.card-category:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
 
 .card-grid {
@@ -40,7 +48,6 @@ body{
   grid-template-columns: 1fr 1fr 1fr 1fr;
   column-gap: 20px;
   row-gap: 20px;
-
 }
 
 .card-category a {
@@ -70,10 +77,111 @@ body{
 }
 
 
+.card-list-category {
+  background-size: cover;
+  background-position: center;
+  height: 300px;
+  display: flex;
+  justify-content: left;
+  align-items: end;
+  border-radius: 8px;
+  position: relative;
+  padding: 30px;
+  border: 1px solid #333;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 0.3s ease;
+}
+
+.card-list-category:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.card-list-category.add-new a {
+  text-indent: 0;
+  padding: 10% 0;
+  text-decoration: none;
+  color: #f7f7f7
+}
+
+.card-list-category.add-new a::before {
+  content: "+";
+  display: block;
+  font-size: 100px;
+}
+
+
+.card-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.card-list a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border: 0;
+  text-indent: -9999px;
+  text-align: center;
+  margin: auto;
+  padding: 80% 0;
+}
+
+.card-category a.bookmark {
+  position: absolute;
+  top: 30px;
+  height: 50px;
+  width: 50px;
+  left: auto;
+  right: 30px;
+  padding: 0;
+  text-indent: 0;
+  z-index: 2;
+  font-size: 30px;
+  line-height: 50px;
+}
+
+a.bookmark-large {
+  position: absolute;
+  top: 60px;
+  height: 60px;
+  width: 60px;
+  left: 130px;
+  right: auto;
+  padding: 0;
+  text-indent: 0;
+  z-index: 2;
+  font-size: 25px;
+  line-height: 60px;
+  border: 1px solid white;
+  border-radius: 60px;
+  text-align: center;
+}
+
+.card-list.add-new a {
+  text-indent: 0;
+  padding: 30% 0;
+  text-decoration: none;
+  color: #f7f7f7
+}
+
+.card-list.add-new a::before {
+  content: "+";
+  display: block;
+  font-size: 100px;
+}
+
+
 .banner {
   background-size: cover;
   background-position: center;
-  padding: 250px 0;
+  padding: 225px 0;
 }
 
 .banner h1 {
@@ -102,7 +210,7 @@ body{
   text-decoration: none;
   color: white;
   float: left;
-  margin: 0 10px 0 0;
+  margin: 0 10px 10px 0;
 }
 .solid-button{
   background: #333;
@@ -113,7 +221,7 @@ body{
   content: ""
 }
 
-.form-control{
+.form-control, .form-select{
   background: none !important;
   border: 1px solid #333 !important;
   border-radius: 4px;
@@ -124,4 +232,120 @@ body{
 
 textarea{
   min-height: 200px !important;
+}
+
+
+.card-grid-review {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  column-gap: 20px;
+  row-gap: 20px;
+}
+
+.card-review {
+  height: 350px;
+  display: flex;
+  justify-content: left;
+  align-items: start;
+  border-radius: 8px;
+  position: relative;
+  border: 1px solid #333;
+  overflow: hidden;
+  transform: scale(1);
+  transition: 0.3s ease;
+}
+
+.card-review:hover {
+  transform: scale(1.05);
+  transition: 0.3s ease;
+}
+
+.poster {
+  width: 50%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+}
+.rating{
+  position: absolute;
+  background: white;
+  color: black;
+  top: 20px;
+  left: 20px;
+  padding: 10px 15px;
+  font-weight: bold;
+  border-radius: 4px;
+}
+.content{padding: 30px;}
+
+.card-review a {
+  position: absolute;
+  top: 0;
+  height: 100%;
+  width: 100%;
+  left: 0;
+  right: 0;
+  border: 0;
+  text-indent: -9999px;
+  text-align: center;
+  margin: auto;
+  padding: 80% 0;
+}
+
+nav ul{
+  position: absolute;
+  right: 10px;
+  list-style: none;
+  top: 5px
+}
+nav ul li{
+  float: left;
+  margin-left: 10px;
+}
+nav ul li a{
+  text-decoration: none;
+  color: white;
+}
+nav ul li a i{
+margin: 0 5px;
+}
+.movie{
+  margin: -17px 0 0;
+}
+
+.movies-show nav{
+  top: 70px
+}
+
+@media(max-width: 1199px){
+  .card-grid, .card-list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+
+}
+
+@media(max-width: 999px){
+  .card-grid, .card-list {
+    grid-template-columns: 1fr 1fr;
+  }
+  .card-category, .card-list-category{
+    padding: 10px;
+    height: 250px;
+  }
+  .card-category a.bookmark{
+    top: 10px;
+    right: 10px
+  }
+  .card-grid-review{
+    grid-template-columns: 1fr;
+  }
+  a.bookmark-large{
+    left: 80px;
+  }
+  .back{
+    left: 10px;
+  }
+  .banner{
+    padding: 180px 0;
+  }
 }

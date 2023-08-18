@@ -10,7 +10,13 @@
     <%= javascript_importmap_tags %>
   </head>
 
-  <body>
+  <body class="<%= controller_name %>-<%= action_name %>">
+    <nav class="container" style="position: relative">
+      <ul>
+        <li><a href="/movies"><i class="fa-solid fa-magnifying-glass" style='color: #ffffff'></i> Explore</a></li>
+        <li><a href="/lists"><i class='fa-regular fa-heart' style='color: #ffffff'></i> Wishlists</a></li>
+      </ul>
+    </nav>
     <%= yield %>
   </body>
 </html>

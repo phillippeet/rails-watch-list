@@ -1,7 +1,8 @@
-<p style="color: green; display: none"><%= notice %></p>
+<p style="color: green;"><%= notice %></p>
 <%= link_to "<i class='fa-solid fa-arrow-right' style='color: white'></i>".html_safe, movies_path, class: "back" %>
+<%= link_to "<i class='fa-regular fa-heart' style='color: #ffffff'></i>".html_safe, new_bookmark_path, class: "bookmark-large" %>
 <%= render @movie %>
 
-<div class="container mb-5" style="max-width: 800px">
+<div class="container my-5" style="max-width: 800px">
   <%= link_to "Edit this movie", edit_movie_path(@movie), class: "button" %> <%= button_to "Delete this movie", @movie, method: :delete, class: "button solid-button" %>
 </div>

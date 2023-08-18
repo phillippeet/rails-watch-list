@@ -1,9 +1,9 @@
-<h1>New bookmark</h1>
 
+
+<div class="container my-5" style="max-width: 1000px">
+<h1 class="my-5">New bookmark</h1>
 <%= render "form", bookmark: @bookmark %>
 
-<br>
+<%= link_to "Back to bookmarks", bookmarks_path, class: "button solid-button" %>
 
-<div>
-  <%= link_to "Back to bookmarks", bookmarks_path %>
 </div>

@@ -1,9 +1,7 @@
-<h1>New list</h1>
-
+<div class="container my-5" style="max-width: 1000px">
+<h1 class="my-5">New list</h1>
 <%= render "form", list: @list %>
 
-<br>
+<%= link_to "Back to lists", lists_path, class: "button solid-button" %>
 
-<div>
-  <%= link_to "Back to lists", lists_path %>
 </div>

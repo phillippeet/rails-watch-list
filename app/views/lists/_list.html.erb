@@ -1,12 +1,26 @@
-<div id="<%= dom_id list %>">
-  <p>
-    <strong>Name:</strong>
-    <%= list.name %>
-  </p>
 
-  <p>
-    <strong>Bookmark:</strong>
-    <%= list.bookmark_id %>
-  </p>
+<div class="container my-5">
+  <h1 class="my-5"> <%= list.name %></h1>
+  <div class="card-grid-review my-5">
+
+    <% if list.bookmarks.length >= 1 %>
+      <% list.bookmarks.each do |bookmark| %>
+      <div class="card-review">
+        <span class="rating"><%= bookmark.movie.rating %>/10</span>
+        <div class="poster" style="background-image: linear-gradient(180deg, rgba(20,20,20,0.2) 0%, rgba(20,20,20,0.2) 100%), url(<%= bookmark.movie.poster_url %>)"></div>
+          <div class="content">
+            <p><strong>Name</strong><br>
+            <%= bookmark.movie.title %></p>
+            <p><strong>Comment</strong><br>
+            <%= bookmark.comment %></p>
+          </div>
+        <%= link_to "Show this movie", bookmark.movie, class: "button" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <% else %>
+      No results. As you browse, tap the heart icon to save your favourite movies to this wishlist.
+    <% end %>
 
 </div>
